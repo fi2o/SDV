@@ -936,12 +936,13 @@ input[type=text], input[type=textbox], textarea, input[type=password]{
 			}
 			
 	
-	.related-char-wrap{
+	.rel-char-wrap{
 		height: 120px;
 		margin-top: 5px;
+		position: relative;
 	}
 	
-	.related-char-img{
+	.rel-char-img{
 		width: 120px;
 		/* height: 120px; */
 		display: inline-block;
@@ -949,18 +950,42 @@ input[type=text], input[type=textbox], textarea, input[type=password]{
 		vertical-align: top;
 	}	
 	
-		.related-char-img img{
+		.rel-char-img img{
 			max-width: 120px;
 			max-height: 120px;
 			border:#666 thin solid;
 		}	
 		
-	.related-char-name{
+		
+	.rel-char-info{
 		display: inline-block;
 		width: 170px;
 		margin-left: 5px;
-	}	
+	}
+		
+		.rel-char-name{
 			
+			
+		}	
+				
+		.rel-char-descr{
+			position: absolute;
+			top: 5%;
+			left: -50%;
+			width: 50%;
+			background: #FFF;
+			border: solid 1px #CCC;
+			border-radius: 4px;
+			padding: 8px;
+			box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+			opacity: 0;
+			visibility: hidden;
+		}	
+			
+			.rel-char-wrap:hover .rel-char-descr{
+				opacity: 1;
+				visibility: visible;
+			}
 			
 
 /* Directory section */

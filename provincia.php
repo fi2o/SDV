@@ -166,11 +166,14 @@ require_once('templates/head.php');
 			foreach($personajes as $per)
 			{
 			?>
-			<div class="related-char-wrap">	
-				<div class="related-char-img">
+			<div class="rel-char-wrap">	
+				<div class="rel-char-img">
 					<img name="imagen" src="images/personajes/thumb400/<?php echo $per['imagen'] ?>"/>
 				</div>
-				<span class="related-char-name"><?php echo $per['nombre'] ?><?php echo $per['desc'] ?></span>
+				<div class="rel-char-info"
+					<span class="rel-char-name"><?php echo $per['nombre'] ?></span>
+					<div class="rel-char-descr"><?php echo $per['desc'] ?></div>
+				</div>
 			</div>	
 			<?php 
 			}	
