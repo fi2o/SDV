@@ -41,14 +41,17 @@ $num_rows = $db->num_rows();
 
 // -------------------------------------------------------
 require_once('templates/head.php');
+
+$URL = "$_SERVER[REQUEST_URI]";
+
 ?>
 
 <div class="main">
 	<div class="section-main-wrap column main-section">
 		<h2 class="main-heading">Medios</h2>
-        <a class="tab-link" href="medios.php?views=3<?php if (!empty($_GET['idprovincia'])) {echo "&idprovincia=".$_GET['idprovincia']."";} ?>">Radio</a>
-        <a class="tab-link" href="medios.php?views=1<?php if (!empty($_GET['idprovincia'])) {echo "&idprovincia=".$_GET['idprovincia']."";} ?>">Prensa</a>
-        <a class="tab-link" href="medios.php?views=2<?php if (!empty($_GET['idprovincia'])) {echo "&idprovincia=".$_GET['idprovincia']."";} ?>">Televisión</a>
+        <a class="tab-link <?php if(strpos($URL, '/mx/medios.php?views=3') === 0){ echo 'active'; } ?>" href="medios.php?views=3<?php if (!empty($_GET['idprovincia'])) {echo "&idprovincia=".$_GET['idprovincia']."";} ?>">Radio</a>
+        <a class="tab-link <?php if(strpos($URL, '/mx/medios.php?views=1') === 0){ echo 'active'; } ?>" href="medios.php?views=1<?php if (!empty($_GET['idprovincia'])) {echo "&idprovincia=".$_GET['idprovincia']."";} ?>">Prensa</a>
+        <a class="tab-link <?php if(strpos($URL, '/mx/medios.php?views=2') === 0){ echo 'active'; } ?>" href="medios.php?views=2<?php if (!empty($_GET['idprovincia'])) {echo "&idprovincia=".$_GET['idprovincia']."";} ?>">Televisión</a>
 <?php
 		if ($num_rows<1){
 			echo '<p align="center">No hay entradas.</p>';
