@@ -1,0 +1,97 @@
+<?php
+/**
+ * Esta funcion retorna una fecha en español.
+ *
+ * Formatos de fecha que soporta:
+ *  Y-m-d H:i:s (2008-11-25 16:30:15)
+ *  d-m-Y h:i A (03-11-2008 09:57 AM)
+ *  Y-m-d (2008-11-25)
+ *  Epoch Unix
+ * Idiomas que soports: en y es.
+ *
+ * @version 1.1 
+ * @param	string	$format El formato de la fecha a generar.
+ * @param	string	$date La fecha.
+ * @param	string	$lang El idioma en que se devolvera la fecha.
+ * @return	string
+ */
+function make_date($date, $format, $lang = 'es')
+{
+	# Lista de dias en español e ingles.
+	$days = array(
+		'long' => array(
+			'es' => array('Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo'),
+			'en' => array('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday')
+		),
+		'short' => array(
+			'es' => array('Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab', 'Dom'),
+			'en' => array('Mon', 'Tue', 'Web', 'Thu', 'Fri', 'Sat', 'Sun')
+		)
+	);
+	
+	# Lista de meses en español e ingles.
+	$months = array(
+		'long' => array(
+			'es' => array ('Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'),
+			'en' => array ('January','February','March','April','May','June','July','August','September','October','November','December')
+		),
+		'short' => array(
+			'es' => array ('Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'),
+			'en' => array ('Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec')
+		)
+	);
+	
+	# --------------------------------------------------------
+	
+	# Formato: Y-m-d H:i:s (2008-11-25 16:30:15).
+	if (preg_match('/^([0-9]{4})-([0-9]{2})-([0-9]{2}) ([0-9]{2}):([0-9]{2}):([0-9]{2})$/', $date, $matched))
+	{
+		$date_string = mktime($matched[4], $matched[5], $matched[6], $matched[2], $matched[3], $matched[1]);
+	}
+	# Formato: d-m-Y h:i A (03-11-2008 09:57 AM).
+	else if (preg_match('/^([0-9]{2})-([0-9]{2})-([0-9]{4}) ([0-9]{2}):([0-9]{2}) (AM|PM)$/', $date, $matched))
+	{
+		if ($matched[6] == 'PM')
+		{
+			$matched[4] = $matched[4] + 12;
+			
+			if ($matched[4] == '24')
+			{
+				$matched[4] = '00';
+			}
+		}
+
+		$date_string = mktime($matched[4], $matched[5], '00', $matched[2], $matched[1], $matched[3]);
+	}
+	# Formato Y-m-d (2008-11-25).
+	else if (preg_match('/^([0-9]{4})-([0-9]{2})-([0-9]{2})$/', $date, $matched))
+	{
+		$date_string = mktime(0, 0, 0, $matched[2], $matched[3], $matched[1]);
+	}
+	# Formato Epoch Unix.
+	else if (preg_match('/^([0-9]+)$/',$date))
+	{
+		$date_string = $date;
+	}
+	# Si no es ninguno de los formatos anteriores retorna FALSE.
+	else
+	{
+		return FALSE;
+	}
+	
+	# Le pongo el formato a la fecha pasada.
+	$date_string = date($format, $date_string);
+
+	# Si el idioma de salida es Español se traducen los terminos.
+	if ($lang == 'es')
+	{
+		$date_string = str_ireplace($days['long']['en'], $days['long']['es'], $date_string);
+		$date_string = str_ireplace($months['long']['en'], $months['long']['es'], $date_string);
+
+		$date_string = str_ireplace($days['short']['en'], $days['short']['es'], $date_string);
+		$date_string = str_ireplace($months['short']['en'], $months['short']['es'], $date_string);
+	}
+	
+	return $date_string;
+}
+?>

@@ -1,0 +1,644 @@
+	.container{
+		
+	}
+	
+	.login{
+		background: #ffa852; /* Old browsers */
+		background: -moz-linear-gradient(top,  #ffa852 0%, #ff8000 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffa852), color-stop(100%,#ff8000)); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top,  #ffa852 0%,#ff8000 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top,  #ffa852 0%,#ff8000 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top,  #ffa852 0%,#ff8000 100%); /* IE10+ */
+		background: linear-gradient(to bottom,  #ffa852 0%,#ff8000 100%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffa852', endColorstr='#ff8000',GradientType=0 ); /* IE6-9 */
+	}
+	
+	.login .container{
+
+	}
+
+	.header{
+		background: hsl(30, 100%, 61%);
+		background: -moz-linear-gradient(top, #ff8000 0%, #ffa852 100%); /* FF3.6+ */
+		background: -webkit-linear-gradient(top, #FF8000 0%, #FFA852 100%);
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2), inset 0 -1px rgba(255, 255, 255, 0.15);
+		border-bottom: solid 1px #FF8000;
+	}
+	
+		.logo{
+			position: relative;
+			width: 85px;
+			margin-right: 15px;
+			display: inline-block;
+			vertical-align: bottom;
+		}
+		
+			/*
+.fixed .logo{
+				width: 82px;
+			}
+*/
+		
+			.logo img{
+				width: 100%;
+			}
+
+		.menuCenter{
+			position: relative;
+			width: 900px;
+			margin: 0 auto;
+			padding: 10px 0;
+		}
+
+		.admin-menu-item{
+			position: relative;
+			display: inline-block;
+			color: #FFF;
+			padding: 25px 15px;
+			text-transform: uppercase;
+			font-size: 28px;
+			font-family: 'Sleeve';
+		}
+			
+/*
+		.fixed .admin-menu-item{
+			padding-top: 10px;
+			padding-bottom: 10px;
+		}
+		
+		.admin-menu-item:hover{
+			color: #FFF;
+		}
+*/
+		
+		.admin-menu-item.active {
+			background: rgba(0,0,0,0.075);
+			box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.075), 0 1px rgba(255, 255, 255, 0.1);
+			border-radius: 8px;
+			text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+		}
+		
+/*
+		.siteBtn{
+			display: inline-block;
+			width: 120px;
+			color: #FFF;
+			padding: 10px 0;
+			text-align: center;
+			font-size: 16px;
+			border-radius: 4px;
+			
+		}
+		
+			.siteBtn:active{
+				box-shadow: inset 0 1px 3px rgba(0,0,0,0.15);
+			}
+*/
+		
+/*
+		.joinBtn{
+			position: absolute;
+			right: 0;
+			top: 14px;
+			background: rgb(255, 77, 113);
+			box-shadow: 0 1px 1px rgba(0,0,0,0.15), inset 0 0 0 1px rgba(255,255,255,0.15);
+			padding-left: 25px;
+			text-shadow: 0 2px 1px rgb(238, 35, 51);
+		}
+		
+			.joinBtn:hover {
+				background: rgb(255, 103, 134);
+		
+			}
+		
+		.fixed .joinBtn{
+			top: 0;
+			padding-top: 9px;
+			padding-bottom: 9px;
+			border-radius: 0;
+			box-shadow: inset 0 -1px rgba(255,255,255,0.15);
+			border-bottom: solid 1px rgb(190, 34, 65);
+		}
+		
+			.joinBtn:after{
+				position: absolute;
+				content: '\F093';
+				left: 15px;
+				font-family: 'FontAwesome';
+			}
+*/
+		
+/*
+		.socWrap{
+			position: absolute;
+			right: 5%;
+			top: 15px;
+		}
+		
+			.fixed .socWrap {
+				top: 0;
+			}
+*/
+	
+		
+		.body{
+			width: 900px;
+			margin: 50px auto;
+			padding: 0;
+			box-shadow: none;
+			background: none;
+		}
+	
+		.bodyCont{
+			background: rgba(255, 255, 255, 0.2);
+			box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05);
+			padding: 20px;
+			border-radius: 10px;
+		}
+	
+		.emptyListMsg{
+			color: #58686C;
+			width: 500px;
+			font-size: 20px;
+			margin: 100px auto 0;
+			text-align: center;
+			background: rgba(255,255,255,0.5);
+		}
+	
+		.section-title{
+			margin-bottom: 5px;
+			font-size: 38px;
+			letter-spacing: 1px;
+			color: #F24551;
+			font-family: 'Sleeve';
+		}
+		
+		.add-admin-item-btn{
+			background: #00BFFF;
+			border: solid 1px #00ACE6;
+			color: #FFF;
+			text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+			padding: 4px 8px;
+			line-height: 20px;
+			border-radius: 3px;
+			display: inline-block;
+			margin-bottom: 10px;
+			font-size: 18px;
+			box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+			cursor: pointer;
+		}
+		
+			.add-admin-item-btn:hover{
+				background: #4DD2FF;
+				border-color: #1AC6FF;
+			}
+		
+		.caption-field{
+			visibility: hidden;
+			opacity: 0;
+		}
+		
+		.paginationWrap{
+			text-align: center;
+			margin: 20px;
+			font-size: 18px;
+		}
+		
+			.pageCtrl {
+				display: inline-block;
+				padding: 3px 0;
+				border: solid 1px #79989E;
+				border-radius: 3px;
+				width: 30px;
+				height: 30px;
+				color: #688287;
+				box-sizing: 	 border-box;
+				-moz-box-sizing: border-box;
+				vertical-align: top;
+			}
+			
+				.availablePage:hover {
+					background: rgba(0,0,0,.1);
+					color: rgba(0,0,0,.5);
+				}	
+			
+			.currPage {
+				background: #688287;
+				color: #FFF;
+				border-color: #53686C;
+			}	
+			
+			.nextPage, .prevPage{
+				position: relative;
+				border-color: transparent;
+				text-align: center;
+				background: rgba(255,255,255,0.15);
+			}
+			
+				.nextPage:after, .prevPage:after{
+					position: relative;
+					font-family: 'FontAwesome';
+					font-size: 40px;
+					width: 100%;
+					top: -11px;
+					color: #FF718E;
+				}
+				
+				.nextPage:after{
+					content: '\F0DA';
+					left: 1px;
+				}
+				
+				.prevPage:after{
+					content: '\F0D9';
+					left: -1px;
+				}
+		
+		.admin-video-wrap{
+			border: solid 4px #000;
+			border-radius: 5px;
+			display: inline-block;
+			margin: 10px 0 25px;
+		}
+		
+/*
+		.listVidWrap {
+			padding: 20px 0 10px;
+			border-bottom: dashed 2px rgba(0,0,0,0.1);
+		}	
+
+				
+					.uploaderName{
+						font-weight: 500;
+						font-size: 18px;
+						text-transform: capitalize;
+						color: rgb(255, 77, 113);
+					}
+					
+						.uploaderName:hover{
+							text-decoration: underline;
+						}
+				
+					.uploadDate{
+						font-size: 18px;
+						color: #58686C;
+					}
+*/
+	
+
+/* Form styles */	
+
+	
+/*
+.registerForm {
+	background: rgba(0,0,0,0.05);
+	background: rgba(255,255,255,0.2);
+	box-shadow: 0 1px 10px rgba(0,0,0,0.04);
+	padding: 35px;
+	margin: 0 auto 25px;
+	border-radius: 3px;
+	width: 600px;	
+}
+*/	
+
+	.formTitle{
+		color: #686868;
+		text-align: center;
+		font-size: 44px;
+		margin-bottom: 15px;
+		padding: 5px;
+	}
+	
+	.formMsg{
+		color: #FFF;
+		font-size: 18px;
+		text-align: center;
+		margin-bottom: 20px;
+		text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+	}
+	
+		.contestRulesBtn{
+			width: 180px;
+			text-transform: capitalize;
+			text-shadow: 0 2px 1px rgb(34, 148, 253);
+			background: rgb(77, 170, 255);
+			border: solid 1px rgb(46, 146, 236);
+			box-shadow: 0 1px 1px rgba(0,0,0,0.15), inset 0 1px rgba(255,255,255,0.1);
+			margin-top: 10px;
+		}
+	
+/*
+	.fieldWrap {
+		display: inline-block;
+	}
+*/
+	
+	.fieldWrap{
+		margin-bottom: 20px;
+	}
+	
+	.fieldWrap.first{
+		margin-right: 35px;
+	}
+	
+		.fieldLbl {
+			color: #686868;
+		}
+		
+		.url-label{
+			color: #999;
+		}
+		
+		.textField {
+			border: solid 1px #686868;
+			padding: 10px 8px;
+			width: 280px;
+			margin-bottom: 15px;
+			border-radius: 4px;
+			font-size: 15px;
+			color: #686868;
+			box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+		}
+		
+		.ally-url-field{
+			width: 70%;
+		}
+		
+/*
+	.fieldset{
+		background: rgba(0,0,0,0.035);
+		border-radius: 4px;
+		color: #FFF;
+		border: solid 1px #ABB4C5;
+		margin-bottom: 15px;
+	}
+*/	
+	
+/*
+	.mce-panel{
+		border: 0 solid #DA3053 !important;
+		background-color: #F8F8F8 !important;
+		border-radius: 3px;
+		box-shadow: 1px 2px 2px rgba(0,0,0,0.15);
+	}
+	
+		.mce-stack-layout-item{
+			border-radius: 0 !important;
+		}
+		
+		#mce_21 {
+			border-radius: 0 0 3px 3px !important;
+		}
+*/	
+	
+	.loginForm{
+		position: relative;
+		width: 300px;
+		margin: 200px auto 0;
+	}
+	
+		.loginForm .formField{
+			width: 100%;
+			border-color: #C60;
+		}
+		
+		.loginText{
+			color: #FFF;
+			text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+			font-size: 52px;
+			letter-spacing: 2px;
+			display: block;
+			text-align: center;
+			margin-bottom: 5px;
+			font-family: 'Sleeve';
+		}
+		
+		.submitBtn{
+			display: inline-block;
+			width: 100%;
+			padding: 10px 0;
+			color: #FFF;
+			text-align: center;
+			font-size: 18px;
+			text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+			border: solid 1px #F9CF01;
+			border-radius: 6px;
+			background: #F9CF01;
+			box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.4), 0 1px 2px rgba(0, 0, 0, 0.1);
+			cursor: pointer;
+		}
+		
+			.submitBtn:hover{
+				background: #FEDB2F;
+				border-color: #FEE252;
+			}
+			
+		.formLogo{
+			position: absolute;
+			left: 50%;
+			top: -190px;
+			margin-left: -95px;
+			width: 190px;
+		}	
+		
+		
+
+	
+	
+/* Admin styles	 */
+
+.logoutBtn{
+	position: absolute;
+	top: 35px;
+	right: 0;
+	padding: 5px 15px 5px 45px;
+	color: #FFF;
+	font-size: 15px;
+	border-radius: 4px;
+	letter-spacing: 1px;
+	background: rgba(255, 255, 255, 0.3);
+	border: solid 1px rgba(255, 255, 255, 0.1);
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), inset 0 1px rgba(255, 255, 255, 0.01);
+}	
+
+/*
+	.fixed .logoutBtn {
+		top: 0;
+		border-radius: 0;
+		padding-top: 9px;
+		padding-bottom: 9px;
+	}
+*/
+
+	.logoutBtn:hover{
+		background: #FF5757;
+		border-color: #F03535;
+		color: #FFF;
+		text-shadow: 0 2px 1px rgb(238, 35, 51);
+	}
+	
+	.logoutBtn:after{
+		content: '\F011';
+		font-family: 'FontAwesome';
+		position: absolute;
+		font-size: 18px;
+		left: 16px;
+		top: 4px;
+		transition: 		all .5s cubic-bezier(.32,.95,.4,.99), text-shadow 0;
+		-webkit-transition: all .5s cubic-bezier(.32,.95,.4,.99), text-shadow 0;
+		-moz-transition: 	all .5s cubic-bezier(.32,.95,.4,.99), text-shadow 0;
+		-ms-transition: 	all .5s cubic-bezier(.32,.95,.4,.99), text-shadow 0;	
+	}
+	
+/*
+	.fixed .logoutBtn:after{
+		top: 7px;
+	}
+*/
+	
+	.item-count {
+		color: #58686C;
+		font-size: 16px;
+		position: absolute;
+		right: 0;
+		top: 0;
+	}	
+
+	.formVideo{
+		width: 600px;
+		height: 300px;
+	}
+		
+		.editable-row{
+			padding: 10px 0;
+			font-size: 14px;
+			position: relative;
+			border-bottom: dashed 2px rgba(0, 0, 0, 0.1);
+		}
+
+		.editable-row.odd{
+			background: rgba(0,0,0,0.03);
+		}
+	
+			
+			.admin .ally-logo-wrap{
+				height: 80px;
+				width: 80px;
+			}
+		
+			.userListItem{
+				display: inline-block;
+				color: #58686C;
+				vertical-align: top;
+			}
+			
+			.usrListName{
+				width: 43%;
+				color: #686868;
+				display: inline-block;
+				vertical-align: top;
+			}
+			
+			.aprovalStatus{
+				position: absolute;
+				width: 68px;
+				text-align: center;
+				padding: 2px;
+				border-radius: 2px;
+				border: solid 1px rgba(0,0,0,0.05);
+				font-size: 12px;
+				font-weight: 600;
+				top: 14px;
+				background: rgba(0,0,0,.1);
+				left: 33%;
+			}
+			
+			.usrListLikes{
+				width: 17%;
+				-webkit-backface-visibility: hidden;
+			}
+			
+				.count{
+					color: #FFF;
+					background: rgb(255, 189, 48);
+					border: solid 1px rgb(236, 167, 18);
+					display: inline-block;
+					padding: 2px 5px;
+					border-radius: 4px;
+				}	
+			
+			.usrListDate{
+				width: 28%;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: clip;
+			}
+			
+			.usrListBtn {
+				position: absolute;
+				top: 5px;
+				right: 5px;
+				padding: 4px 8px;
+				color: #FFF;
+				text-align: center;
+				text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+				border: solid 1px;
+				border-radius: 4px;
+			}	
+				
+				.usrListBtn:active{
+					box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+				}
+			
+				.usrListBtn:hover{
+					opacity: 1;
+				}
+			
+				.usrListBtn::after{
+					position: relative;
+					font-family: 'FontAwesome';
+					top: 0;
+					left: 4px;
+
+				}
+				
+				.usrListEdit {
+					background: #93DF20;
+					border-color: #84C91D;
+				}
+				
+					.usrListEdit:hover{
+						background: #A8E64C;
+						border-color: #9DE236;
+					}
+				
+				.editable-row .usrListEdit{
+					right: 85px;
+				}
+				
+				
+				.usrListEdit::after{
+					content: '\F040';
+				}
+				
+				.usrListDelete {
+					/*
+background: #F24350;
+					border-color: rgb(221, 55, 55);
+*/
+					
+					color: #686868;
+					text-shadow: none;
+					opacity: 0.7;
+				}	
+				
+					.usrListDelete:hover{
+						opacity: 1;
+						background: #F24350;
+						border-color: rgb(221, 55, 55);
+						color: #FFF;
+					}
+				
+				.usrListDelete::after{
+					content: '\F00D';
+				}
