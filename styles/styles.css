@@ -231,7 +231,6 @@ input[type=text], input[type=textbox], textarea, input[type=password]{
 			}
 			
 			.mediums{
-				/* background: url(../images/UI/camera-sdv.jpg); */
 				background: #FF4D4D;
 				color: #FFF;
 			}
@@ -966,16 +965,41 @@ input[type=text], input[type=textbox], textarea, input[type=password]{
 
 /* Directory section */
 
+.tabs-wrap{
+	border-bottom: solid 1px hsl(0, 0%, 80%);
+	margin: 15px 0 25px;
+}
+
+	.tab-link{
+		border: solid 1px #CCC;
+		display: inline-block;
+		position: relative;
+		bottom: -1px;
+		border-radius: 3px 3px 0 0;
+		padding: 5px 10px;
+		font-weight: 600;
+		font-size: 16px;
+		background: #EEE;
+		margin-left: 5px;
+	}
+	
+	.tab-link.active{
+		border-bottom-color: #FFF;
+		background: #FFF;
+		color: #4DA6FF;
+	}
+
+
 .directory-entry{
 	margin-bottom: 15px;
 }
 
-.dir-entry-thumb{
-	display: inline-block;
-	overflow: hidden;
-	height: 100px;
-	width: 100px;
-}
+	.dir-entry-thumb{
+		display: inline-block;
+		overflow: hidden;
+		height: 100px;
+		width: 100px;
+	}
 
 	.dir-entry-thumb img{
 		max-width: 100%;
