@@ -937,7 +937,8 @@ input[type=text], input[type=textbox], textarea, input[type=password]{
 			
 	
 	.rel-char-wrap{
-		height: 120px;
+		max-height: 120px;
+		padding-bottom: 5px;
 		margin-top: 5px;
 		position: relative;
 	}
@@ -971,20 +972,27 @@ input[type=text], input[type=textbox], textarea, input[type=password]{
 		.rel-char-descr{
 			position: absolute;
 			top: 5%;
-			left: -50%;
+			left: -47.5%;
 			width: 50%;
-			background: #FFF;
-			border: solid 1px #CCC;
+			background: #F2E18C;
+			border: solid 1px #E8C930;
 			border-radius: 4px;
 			padding: 8px;
 			box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 			opacity: 0;
 			visibility: hidden;
 		}	
+		
+			.rel-char-descr *{
+				color: #222;
+				font-weight: 600;
+				-webkit-backface-visibility: hidden;
+			}
 			
 			.rel-char-wrap:hover .rel-char-descr{
 				opacity: 1;
 				visibility: visible;
+				left: -50%;
 			}
 			
 

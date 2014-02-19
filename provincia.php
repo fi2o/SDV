@@ -172,7 +172,7 @@ require_once('templates/head.php');
 				</div>
 				<div class="rel-char-info"
 					<span class="rel-char-name"><?php echo $per['nombre'] ?></span>
-					<div class="rel-char-descr"><?php echo $per['desc'] ?></div>
+					<div class="rel-char-descr fluid-transition"><?php echo $per['desc'] ?></div>
 				</div>
 			</div>	
 			<?php 
