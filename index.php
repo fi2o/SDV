@@ -81,40 +81,7 @@ $noticias = $db->query($sql2);
 			</div>
 		</div>
 	</div>
-<!--
-	<div class="directoryWrap column main-section">
-			<h2 class="main-heading media-title">Periódicos</h2>
-	<?php 
-			foreach($dir1 as $periodicos)
-			{
-			?> 
-	           <h3><a title="ver" target="_blank" href="<?php echo $periodicos['web'] ?>"><?php echo $periodicos['nombre'] ?></a> - </h3>
-				
-			<?php 
-			}	
-			?> 
-	        <h2 class="main-heading media-title">Radio</h2>
-	<?php 
-			foreach($dir3 as $radio)
-			{
-			?> 
-	            <h3><a title="ver" target="_blank" href="<?php echo $radio['web'] ?>"><?php echo $radio['nombre'] ?></a> - </h3>
-				
-			<?php 
-			}	
-			?> 
-	        <h2 class="main-heading media-title">Televisión</h2>
-	<?php 
-			foreach($dir2 as $television)
-			{
-			?> 
-	           <h3><a title="ver" target="_blank" href="<?php echo $television['web'] ?>"><?php echo $television['nombre'] ?></a> - </h3>
-				
-			<?php 
-			}	
-			?>                 
-	</div>
--->
+
 </div>
 
 <div class="aside">
@@ -136,22 +103,7 @@ $noticias = $db->query($sql2);
 		<div class="live-vid-wrap small">
 			
 		</div>
-	
-<!--
-		
-		<div class="ad extra-ad">
-	        <?php
-		$hoya = date("Y-m-d");
-		foreach ($banner_por as $bannersf) {
-		$fa = new DateTime($hoya);		
-		$fb = new DateTime($bannersf['fstart']);
-		$fc = new DateTime($bannersf['ffinish']);		
-		if ($fa >= $fb and $fc > $fa){
-		?>
-	    <a href="<?php echo $bannersf['link'];?>"><img src="images/banners/thumb300/<?php echo $bannersf['imagen'];?>" width="300" height="250" alt="pfront" /></a>
-		<?php } else {echo "";} }?>
-	    </div>
--->
+
 		
 	</div>
 	
@@ -165,60 +117,6 @@ $noticias = $db->query($sql2);
 
 
 <script src="scripts/news-title-widget.js"></script>
-
-<!--
-<script>
-	
-	var rotate_interval;
-	
-	function rotateNewsFN(){
-		
-		var current_news = $('.news-detail').first();
-		current_news.fadeIn();
-		
-		function nextActiveFN(){
-			
-			current_news.fadeOut('fast');
-			current_news = current_news.next('.news-detail');
-			
-			if(!current_news.hasClass('news-detail')){
-				current_news = $('.news-detail').first();
-			}
-			
-			current_news.fadeIn('fast');
-		}
-		
-		rotate_interval = setInterval(nextActiveFN, 4000);
-		
-	}
-	
-	rotateNewsFN()
-
-	$('.map-point').on('click', function(){
-		var dataProvince = $(this).data('province'),
-			province_wrap = $('.none');
-				
-		$(this).addClass('active').siblings().removeClass('active');
-
-		province_wrap.animate({
-			'opacity': '0',
-			'left': '30px'
-		}, 200);
-		
-		setTimeout( function(){
-			$.get( "test.php",{id_provincia:dataProvince}, function( data ) {
-				province_wrap.html( data ).animate({
-					'opacity': '1',
-					'left': '0'
-				}, 200);
-				
-				clearInterval(rotate_interval);
-				rotateNewsFN();
-			});
-		}, 250);
-	});
-</script>
--->
 
 <script type="text/javascript">
 /* script used to make the carousel work.*/ 
@@ -255,9 +153,14 @@ $noticias = $db->query($sql2);
 	
 	//determines next thumb to set as active and
 	//sets it's corresponding carousel-display as active
-	function display_nextFN(){
+	function display_nextFN(elem){
 		
 		var next_active = $('.carousel-thumb.active').next(); 
+		
+		if(elem){
+			next_active = elem;
+		}
+		
 		
 		//next object is a thumb?
 		if(next_active.hasClass('carousel-thumb')){
@@ -303,21 +206,8 @@ $noticias = $db->query($sql2);
 	
 		if(!$(this).hasClass('active')){
 				
-			//removes previous active thumb/display
-			$('.carousel-thumb').removeClass('active');
-			$('.carousel-display').fadeOut('fast').children('.carousel-descrip-wrap').animate({
-				bottom: '-50px'
-			}, 150);
-			
-			//adds active to next thumb/display in line
-			var next_display = $(this).data('display');
-			
-			$(this).addClass('active');
-			$('.carousel-display.' + next_display).fadeIn('fast').children('.carousel-descrip-wrap').animate({
-				bottom: '0'
-			}, 150);
-			
-			set_obj_posFN();
+				display_nextFN($(this));
+
 		}
 
 		
