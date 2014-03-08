@@ -32,7 +32,7 @@ $db->query($sql,FALSE);
 $total_num_rows = $db->num_rows();
 
 // -------------------------------------------------------
-$sql = 'SELECT * FROM videosyt WHERE idsecciones = '.$sec['idsecciones'].'';	
+$sql = 'SELECT idsecciones, nvideo, idvideosyt, descv, linkv, fecha_publi FROM videosyt WHERE idsecciones = '.$sec['idsecciones'].'';	
 
 $index = ($pag * $per_page) - $per_page;
 $sql.= ' LIMIT '. $index .','. $per_page .';';
@@ -93,19 +93,8 @@ require_once('templates/head.php');
 </div>
 
 <div class="aside">	
-	<a href="#" class="extra-link mediums">
-		<span class="extra-text">Medios</span>
-		<i class="fa fa-file-text"></i>
-		<i class="fa fa-desktop"></i>
-		<i class="fa fa-globe bigger"></i>
-		<i class="fa fa-microphone bigger"></i>
-		
-	</a>
-	<a href="hhoy.php" class="extra-link daily-video last">
-		<span class="extra-text">Historia de hoy</span>
-		<i class="fa fa-desktop"></i>
-		<i class="fa fa-play-circle-o"></i>		
-	</a>
+<a href="medios.php?views=1" class="extra-link mediums"></a>
+	<a href="hhoy.php" class="extra-link daily-video last"></a>
 	<?php
 		require 'templates/aside.php';
 	?>

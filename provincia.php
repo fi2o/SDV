@@ -31,7 +31,7 @@ $sql = 'SELECT covid, idprovincias FROM videosvivo WHERE idprovincias = '.$id_pr
 $covide= $db->query($sql);
 
 // -------------------------------------------------------
-require_once('templates/head.php');
+require_once('templates/headp.php');
 ?>
 
 <div class="main">
@@ -135,19 +135,8 @@ require_once('templates/head.php');
 </div>
 <div class="aside">
 	
-	<a href="medios.php?views=3&idprovincia=<?php echo ($provin['idprovincias']) ?>" class="extra-link mediums">
-		<span class="extra-text">Medios</span>
-		<i class="fa fa-file-text"></i>
-		<i class="fa fa-desktop"></i>
-		<i class="fa fa-globe bigger"></i>
-		<i class="fa fa-microphone bigger"></i>
-		
-	</a>
-	<a href="hhoy.php" class="extra-link daily-video last">
-		<span class="extra-text">Historia de hoy</span>
-		<i class="fa fa-desktop"></i>
-		<i class="fa fa-play-circle-o"></i>		
-	</a>
+	<a href="medios.php?views=1&idprovincia=<?php echo ($provin['idprovincias']) ?>" class="extra-link mediums"></a>
+	<a href="hhoy.php" class="extra-link daily-video last"></a>
 	<div class="province-contents-wrap column related-wrap">	
 		<h3 class="sub-heading">Video relacionado</h3>	
 			<?php 

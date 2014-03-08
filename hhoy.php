@@ -9,7 +9,7 @@ $db->query($sql,FALSE);
 $total_num_rows = $db->num_rows();
 
 // -------------------------------------------------------
-$sql = 'SELECT * FROM videosyt WHERE idsecciones = 4 AND fecha_publi='.$hoy.';';	
+$sql = 'SELECT idsecciones, nvideo, idvideosyt, descv, linkv, fecha_publi FROM videosyt WHERE idsecciones = 4 AND fecha_publi='.$hoy.';';	
 
 $videos_list = $db->query($sql);
 $num_rows = $db->num_rows();
@@ -32,7 +32,7 @@ require_once('templates/head.php');
 	?>
 	
 		<h2 id="video-perfil-title" class="main-heading"><?php echo $videos['nvideo'] ?></h2>
-		<div id="video-perfil-iframe"><iframe width="560" height="315" src="//www.youtube.com/embed/<?php echo $videos['linkv'] ?>" frameborder="0" allowfullscreen></iframe></div>
+		<div id="video-perfil-iframe"><iframe width="728" height="405" src="//www.youtube.com/embed/<?php echo $videos['linkv'] ?>?autoplay=1" frameborder="0" allowfullscreen></iframe></div>
 		
 		<div class="share-wrap">
 			<div class="share-button">
@@ -97,19 +97,7 @@ require_once('templates/head.php');
 
 <div class="aside">
 	
-	<a href="#" class="extra-link mediums">
-		<span class="extra-text">Medios</span>
-		<i class="fa fa-file-text"></i>
-		<i class="fa fa-desktop"></i>
-		<i class="fa fa-globe bigger"></i>
-		<i class="fa fa-microphone bigger"></i>
-		
-	</a>
-	<a href="hhoy.php" class="extra-link daily-video last">
-		<span class="extra-text">Historia de hoy</span>
-		<i class="fa fa-desktop"></i>
-		<i class="fa fa-play-circle-o"></i>		
-	</a>
+<a href="medios.php?views=1" class="extra-link mediums"></a>
 	<? require 'templates/aside.php'; ?>
 </div>
 

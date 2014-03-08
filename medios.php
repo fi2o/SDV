@@ -26,12 +26,12 @@ $sql = '';
 $db = db();
 
 // -------------------------------------------------------
-$sql = 'SELECT iddirectorio FROM directorio WHERE '.$sqlline.';';
+$sql = 'SELECT iddirectorio FROM directorio WHERE '.$sqlline.' ORDER BY nombre ASC;';
 $db->query($sql,FALSE);
 $total_num_rows = $db->num_rows();
 
 // -------------------------------------------------------
-$sql = 'SELECT *  FROM directorio WHERE '.$sqlline.'';	
+$sql = 'SELECT *  FROM directorio WHERE '.$sqlline.' ORDER BY nombre ASC';	
 
 $index = ($pag * $per_page) - $per_page;
 $sql.= ' LIMIT '. $index .','. $per_page .';';
@@ -51,9 +51,9 @@ $URL = "$_SERVER[REQUEST_URI]";
 		<h2 class="main-heading">Medios</h2>
 		
 		<div class="tabs-wrap">
-	        <a class="tab-link <?php if(strpos($URL, '/mx/medios.php?views=3') === 0){ echo 'active'; } ?>" href="medios.php?views=3<?php if (!empty($_GET['idprovincia'])) {echo "&idprovincia=".$_GET['idprovincia']."";} ?>">Radio</a>
 	        <a class="tab-link <?php if(strpos($URL, '/mx/medios.php?views=1') === 0){ echo 'active'; } ?>" href="medios.php?views=1<?php if (!empty($_GET['idprovincia'])) {echo "&idprovincia=".$_GET['idprovincia']."";} ?>">Prensa</a>
 	        <a class="tab-link <?php if(strpos($URL, '/mx/medios.php?views=2') === 0){ echo 'active'; } ?>" href="medios.php?views=2<?php if (!empty($_GET['idprovincia'])) {echo "&idprovincia=".$_GET['idprovincia']."";} ?>">Televisión</a>
+            <a class="tab-link <?php if(strpos($URL, '/mx/medios.php?views=3') === 0){ echo 'active'; } ?>" href="medios.php?views=3<?php if (!empty($_GET['idprovincia'])) {echo "&idprovincia=".$_GET['idprovincia']."";} ?>">Radio</a>
 		</div>
 <?php
 		if ($num_rows<1){
@@ -64,13 +64,8 @@ $URL = "$_SERVER[REQUEST_URI]";
 		foreach ($dir_list as $dir) {
 		?>
 			<div class="directory-entry">
-		        <a href="#"  class="dir-entry-thumb">
-		      		<img name="imagen" src="images/noticias/thumb400/<?php echo $dir['imagen'] ?>" width="140px" />
-		        </a>
 				<div class="dir-entry-details">
-					<h3 class="dir-entry-name"><a href="#"><?php echo $dir['nombre'] ?></a></h3>
-					<br />
-			        <a href="<?php echo $dir['web'] ?>"><?php echo $dir['web'] ?></a>
+					<h3 class="dir-entry-name">&#8226; <a href="<?php echo $dir['web'] ?>"><?php echo $dir['nombre'] ?></a></h3>
 				</div>
 			</div>
 		<?php 	
@@ -95,11 +90,7 @@ $URL = "$_SERVER[REQUEST_URI]";
 
 <div class="aside">
 	
-	<a href="hhoy.php" class="extra-link daily-video last">
-		<span class="extra-text">Historia de hoy</span>
-		<i class="fa fa-desktop"></i>
-		<i class="fa fa-play-circle-o"></i>		
-	</a>
+	<a href="hhoy.php" class="extra-link daily-video last"></a>
 	<?
 		require 'templates/aside.php';
 	?>

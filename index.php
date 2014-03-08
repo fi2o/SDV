@@ -4,7 +4,7 @@ require_once('templates/head.php');
 $db = db();
 $sql = '';
 // -------------------------------------------------------
-$sql = 'SELECT idvideosyt, linkv, nvideo FROM videosyt ORDER BY fecha_entrada DESC LIMIT 4';	
+$sql = 'SELECT idvideosyt, linkv, nvideo FROM videosyt WHERE idsecciones != 4 ORDER BY fecha_entrada DESC LIMIT 4';	
 $videos = $db->query($sql);
 
 $sql = 'SELECT idprovincias, clase, provincias FROM provincias;';	
@@ -57,7 +57,7 @@ $noticias = $db->query($sql2);
 			?> 
 				<div class="carousel-display">
 	            <a title="ver" href="videospp.php?video=<?php echo $vid['idvideosyt'] ?>">
-					<img name="imagen" src="http://img.youtube.com/vi/<?php echo $vid['linkv'] ?>/hqdefault.jpg"/>
+					<img name="imagen" src="http://img.youtube.com/vi/<?php echo $vid['linkv'] ?>/0.jpg"/>
 					<h3 class="carousel-descrip-wrap"><?php echo $vid['nvideo'] ?></h3>
 	                </a>
 				</div>
@@ -70,7 +70,7 @@ $noticias = $db->query($sql2);
 				foreach($videos as $vid)
 				{
 				?> 
-					<span class="carousel-thumb transition"><img name="imagen" src="http://img.youtube.com/vi/<?php echo $vid['linkv'] ?>/mqdefault.jpg"/></span>
+					<span class="carousel-thumb transition-2"><img name="imagen" src="http://img.youtube.com/vi/<?php echo $vid['linkv'] ?>/mqdefault.jpg"/></span>
 				
 				<?php 
 				}
@@ -84,25 +84,15 @@ $noticias = $db->query($sql2);
 </div>
 
 <div class="aside">
-	<a href="medios.php?views=3" class="extra-link mediums">
-		<span class="extra-text">Medios</span>
-		<i class="fa fa-file-text"></i>
-		<i class="fa fa-desktop"></i>
-		<i class="fa fa-globe bigger"></i>
-		<i class="fa fa-microphone bigger"></i>
-		
-	</a>
-	<a href="hhoy.php" class="extra-link daily-video last">
-		<span class="extra-text">Historia de hoy</span>
-		<i class="fa fa-desktop"></i>
-		<i class="fa fa-play-circle-o"></i>		
-	</a>
+	<a href="medios.php?views=1" class="extra-link mediums"></a>
+	
 	<div class="province-contents-wrap column">
 		<h2 class="province-name-title sub-heading">Video en vivo</h2>
-		<div class="live-vid-wrap small">
-			
-		</div>
+		<div class="live-vid-wrap small">		
+	</div>
+	<br />
 
+	<a href="hhoy.php" class="extra-link daily-video last"></a>
 		
 	</div>
 	
